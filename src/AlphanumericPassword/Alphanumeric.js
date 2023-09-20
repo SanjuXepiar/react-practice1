@@ -5,17 +5,16 @@ const Alphanumeric = () => {
   const [alert, setAlert] = useState("");
 
   //
-  const isAlphanumeric = (char) => {
-    return /[a-zA-Z0-9]/.test(char);
-  };
+  // const isAlphanumeric = (char) => {
+  //   return /[a-zA-Z0-9!@#$%^&*(),.?":{}|<>~`;'+_=/-]/.test(char);
+  // };
   const handleSubmit = (e) => {
     e.preventDefault();
     for (let i = 0; i < input.length; i++)
-      if (isAlphanumeric(input[i])) {
-        setAlert("The password is alphanumeric");
-      } else {
-        setAlert("The password isn't alphanumeric");
-      }
+      // if (isAlphanumeric(input[i])) {
+      if (!isNaN(input[i])) setAlert("The password is alphanumeric");
+    //
+
     setTimeout(() => {
       setAlert("");
       setInput("");

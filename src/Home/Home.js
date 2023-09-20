@@ -17,6 +17,9 @@ function Home() {
         <Link to="/alphanumeric">
           <h4>Alphanumeric-Password</h4>
         </Link>
+        <Link to="/disable">
+          <h4>Disable-Submit</h4>
+        </Link>
       </section>
     </div>
   );

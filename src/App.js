@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Counter from "./Counter/Counter";
 import Twitter from "./TextCounter/Twitter";
 import Password from "./PasswordMatch/Password";
+import Alphanumeric from "./AlphanumericPassword/Alphanumeric";
 import Home from "./Home/Home";
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/counter" element={<Counter />} />
         <Route path="/twitter" element={<Twitter />} />
         <Route path="/password" element={<Password />} />
+        <Route path="/alphanumeric" element={<Alphanumeric />} />
       </Routes>
     </div>
   );

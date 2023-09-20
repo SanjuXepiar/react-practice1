@@ -14,6 +14,9 @@ function Home() {
         <Link to="/password">
           <h4>Password-Match</h4>
         </Link>
+        <Link to="/alphanumeric">
+          <h4>Alphanumeric-Password</h4>
+        </Link>
       </section>
     </div>
   );

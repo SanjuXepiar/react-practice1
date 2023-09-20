@@ -10,7 +10,7 @@ const Counter = () => {
     setCount(count - 1);
   };
   return (
-    <main>
+    <div className="main">
       <h3>This is the Counter Project</h3>
       <div className="buttons">
         <button className="counterButton" onClick={handleIncrement}>
@@ -26,7 +26,7 @@ const Counter = () => {
         <h3 className="counterLine">Counter</h3>
         <p className="counter">{count}</p>
       </div>
-    </main>
+    </div>
   );
 };
 

@@ -1,16 +1,17 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
-import Counter from "./1.Counter/Counter";
+import { Routes, Route } from "react-router-dom";
+import Counter from "./Counter/Counter";
+import Twitter from "./TextCounter/Twitter";
+import Password from "./PasswordMatch/Password";
+import Home from "./Home/Home";
 function App() {
   return (
     <div className="App">
-      <h1>The links given below leads to my projects</h1>
-      <Link to="/counter">
-        <h4>Counter</h4>
-      </Link>
-
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/counter" element={<Counter />} />
+        <Route path="/twitter" element={<Twitter />} />
+        <Route path="/password" element={<Password />} />
       </Routes>
     </div>
   );

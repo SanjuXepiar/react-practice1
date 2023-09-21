@@ -1,7 +1,7 @@
 import React from "react";
 import "./AddCart.css";
 import Data from "./Data";
-// import Cart from "./Cart";
+import Cart from "./Cart";
 import { useState } from "react";
 const AddCart = () => {
   const [cart, setCart] = useState([]);
@@ -72,33 +72,7 @@ const AddCart = () => {
         }}
       ></div>
       {/* ............. */}
-      <div className="cartList">
-        <h1>Cart List</h1>
-        <p> Total items selected : {cart.length}</p>
-        {cart.map((items) => {
-          return (
-            <div className="contents" key={items.id}>
-              <div className="contents-img">
-                <img
-                  src={items.img}
-                  alt={items.name}
-                  style={{
-                    width: "12rem",
-                    height: "10rem",
-                    border: ".1rem solid blue",
-                    borderRadius: ".2rem",
-                  }}
-                />
-              </div>
-              <div className="contents-desc">
-                <h5>{items.name}</h5>
-                <p style={{ fontWeight: "500" }}>Rs: {items.price}</p>
-              </div>
-              <p>Quantity:{items.quantity}</p>
-            </div>
-          );
-        })}
-      </div>
+      <Cart cart={cart} />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Alphanumeric from "./AlphanumericPassword/Alphanumeric";
 import Disable from "./DisableSubmit/Disable";
 import ShowHide from "./ShowPassword/ShowHide";
 import AddCart from "./AddToCart/AddCart";
+import SwitchTab from "./SwitchTabs/SwitchTab";
 import Home from "./Home/Home";
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/disable" element={<Disable />} />
         <Route path="/showhide" element={<ShowHide />} />
         <Route path="/addcart" element={<AddCart />} />
+        <Route path="/switchTab" element={<SwitchTab />} />
       </Routes>
     </div>
   );

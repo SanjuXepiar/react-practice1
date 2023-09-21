@@ -26,6 +26,9 @@ function Home() {
         <Link to="/addcart">
           <h4>Add To Cart</h4>
         </Link>
+        <Link to="/switchTab">
+          <h4>SwitchTabs</h4>
+        </Link>
       </section>
     </div>
   );

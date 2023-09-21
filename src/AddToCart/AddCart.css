@@ -1,0 +1,15 @@
+.contents {
+  width: 40vw;
+  background: #7a7adb;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+.contents-desc {
+  width: 38%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -1rem;
+}

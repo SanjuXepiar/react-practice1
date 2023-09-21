@@ -23,6 +23,9 @@ function Home() {
         <Link to="/showhide">
           <h4>Show/Hide Password Button</h4>
         </Link>
+        <Link to="/addcart">
+          <h4>Add To Cart</h4>
+        </Link>
       </section>
     </div>
   );

@@ -20,6 +20,9 @@ function Home() {
         <Link to="/disable">
           <h4>Disable-Submit</h4>
         </Link>
+        <Link to="/showhide">
+          <h4>Show/Hide Password Button</h4>
+        </Link>
       </section>
     </div>
   );

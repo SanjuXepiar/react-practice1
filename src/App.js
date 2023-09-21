@@ -5,6 +5,7 @@ import Twitter from "./TextCounter/Twitter";
 import Password from "./PasswordMatch/Password";
 import Alphanumeric from "./AlphanumericPassword/Alphanumeric";
 import Disable from "./DisableSubmit/Disable";
+import ShowHide from "./ShowPassword/ShowHide";
 import Home from "./Home/Home";
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/password" element={<Password />} />
         <Route path="/alphanumeric" element={<Alphanumeric />} />
         <Route path="/disable" element={<Disable />} />
+        <Route path="/showhide" element={<ShowHide />} />
       </Routes>
     </div>
   );

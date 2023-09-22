@@ -9,6 +9,7 @@ import ShowHide from "./ShowPassword/ShowHide";
 import AddCart from "./AddToCart/AddCart";
 import SwitchTab from "./SwitchTabs/SwitchTab";
 import Toast from "./Show-Toast/Toast";
+import Todo from "./Todo-StrikeThrough/Todo";
 import Home from "./Home/Home";
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/addcart" element={<AddCart />} />
         <Route path="/switchTab" element={<SwitchTab />} />
         <Route path="/toast" element={<Toast />} />
+        <Route path="/strikeThrough" element={<Todo />} />
       </Routes>
     </div>
   );

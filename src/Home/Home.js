@@ -32,6 +32,9 @@ function Home() {
         <Link to="/toast">
           <h4>Toast</h4>
         </Link>
+        <Link to="/strikeThrough">
+          <h4>Todo- StrikeThrough</h4>
+        </Link>
       </section>
     </div>
   );

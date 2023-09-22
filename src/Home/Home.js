@@ -29,6 +29,9 @@ function Home() {
         <Link to="/switchTab">
           <h4>SwitchTabs</h4>
         </Link>
+        <Link to="/toast">
+          <h4>Toast</h4>
+        </Link>
       </section>
     </div>
   );

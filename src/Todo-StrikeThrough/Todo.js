@@ -1,9 +1,9 @@
 import React from "react";
+import { BiSolidLike } from "react-icons/bi";
 import { useState } from "react";
 const Todo = () => {
   const [todo, setTodo] = useState([]);
   const [input, setInput] = useState("");
-  //   const [strike, setStrike] = useState(false);
   const handleInput = (e) => {
     setInput(e.target.value);
   };
@@ -12,6 +12,7 @@ const Todo = () => {
       taskName: input,
       id: Math.random(),
       strike: false,
+      like: false,
     };
     setTodo([newTask, ...todo]);
     setInput("");
@@ -21,11 +22,19 @@ const Todo = () => {
       if (item.id === task.id) {
         return { ...task, strike: !task.strike };
       }
-      //   console.log(item);
-      //   console.log(item.strike);
       return item;
     });
     setTodo(updatedTodo);
+  };
+  const handleLike = (task) => {
+    const likeUpdate = todo.map((item) => {
+      if (task.id === item.id) {
+        return { ...task, like: !task.like };
+      }
+      return item;
+    });
+    setTodo(likeUpdate);
+    console.log(task);
   };
   //
   return (
@@ -57,6 +66,26 @@ const Todo = () => {
               >
                 {task.taskName}
               </h3>
+              <button
+                style={{
+                  border: "none",
+                  color: task.like && "blue",
+                  cursor: "pointer",
+                  //   fontWeight: "500",
+                }}
+                onClick={() => handleLike(task)}
+              >
+                <BiSolidLike />
+              </button>
+              <div
+                style={{
+                  height: ".2rem",
+                  width: "3vw",
+                  margin: "auto",
+                  borderRadius: "5rem",
+                  background: "#ff0f9f",
+                }}
+              ></div>
             </div>
           );
         })}

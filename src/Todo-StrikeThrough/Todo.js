@@ -1,13 +1,14 @@
 import React from "react";
-import { BiSolidLike } from "react-icons/bi";
+import "./Todo.css";
+import { BiSolidLike, BiEdit } from "react-icons/bi";
+import { MdDelete } from "react-icons/md";
 import { useState } from "react";
 const Todo = () => {
   const [todo, setTodo] = useState([]);
   const [input, setInput] = useState("");
-  const handleInput = (e) => {
-    setInput(e.target.value);
-  };
-  const handleTask = () => {
+  const [inEdit, setInEdit] = useState("");
+  //
+  const handleAdd = () => {
     const newTask = {
       taskName: input,
       id: Math.random(),
@@ -34,7 +35,28 @@ const Todo = () => {
       return item;
     });
     setTodo(likeUpdate);
-    console.log(task);
+  };
+  const handleDelete = (task) => {
+    const deleteUpdate = todo.filter((item) => item.id !== task.id);
+    setTodo(deleteUpdate);
+  };
+  const handleEdit = (task) => {
+    setInEdit(task);
+    setInput(task.taskName);
+  };
+  const updateEdit = () => {
+    const updatedEdit = todo.map((item) => {
+      if (item.id === inEdit.id) {
+        return {
+          ...item,
+          taskName: input,
+        };
+      }
+      return item;
+    });
+    setTodo(updatedEdit);
+    setInput("");
+    setInEdit("");
   };
   //
   return (
@@ -50,46 +72,69 @@ const Todo = () => {
         }}
       ></div>
       <div style={{ marginTop: "2rem" }}>
-        <input type="text" value={input} onChange={handleInput} />
-        <button onClick={handleTask}>AddTask</button>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button onClick={inEdit ? updateEdit : handleAdd}>
+          {inEdit ? "Edit-Item" : "Add-Item"}
+        </button>
       </div>
-      <div>
-        {todo.map((task) => {
-          return (
-            <div key={task.id}>
+
+      {todo.map((task) => {
+        return (
+          todo.length !== 0 &&
+          task.taskName && (
+            <div key={task.id} className="todoList">
               <h3
                 onClick={() => handleStrike(task)}
                 style={{
                   cursor: "pointer",
                   textDecorationLine: task.strike && "line-through",
+                  color: task.strike && "blue",
                 }}
               >
                 {task.taskName}
               </h3>
-              <button
-                style={{
-                  border: "none",
-                  color: task.like && "blue",
-                  cursor: "pointer",
-                  //   fontWeight: "500",
-                }}
-                onClick={() => handleLike(task)}
-              >
-                <BiSolidLike />
-              </button>
-              <div
-                style={{
-                  height: ".2rem",
-                  width: "3vw",
-                  margin: "auto",
-                  borderRadius: "5rem",
-                  background: "#ff0f9f",
-                }}
-              ></div>
+
+              {task.taskName && (
+                <BiSolidLike
+                  style={{
+                    width: "1.5rem",
+                    height: "1.2rem",
+                    cursor: "pointer",
+                    color: task.like && "blue",
+                  }}
+                  onClick={() => handleLike(task)}
+                />
+              )}
+
+              {task.taskName && (
+                <MdDelete
+                  style={{
+                    width: "1.5rem",
+                    height: "1.2rem",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => handleDelete(task)}
+                />
+              )}
+
+              {task.taskName && (
+                <BiEdit
+                  style={{
+                    width: "1.5rem",
+                    height: "1.2rem",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => handleEdit(task)}
+                />
+              )}
             </div>
-          );
-        })}
-      </div>
+          )
+        );
+      })}
     </div>
   );
 };

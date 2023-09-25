@@ -1,0 +1,10 @@
+.links {
+  width: 100vw;
+}
+.project {
+  width: 30vw;
+  height: 15rem;
+  background: red;
+  border: 0.2rem solid blue;
+  border-radius: 0.3rem;
+}

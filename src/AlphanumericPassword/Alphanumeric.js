@@ -4,21 +4,20 @@ const Alphanumeric = () => {
   const [input, setInput] = useState("");
   const [alert, setAlert] = useState("");
 
-  //
-  // const isAlphanumeric = (char) => {
-  //   return /[a-zA-Z0-9!@#$%^&*(),.?":{}|<>~`;'+_=/-]/.test(char);
-  // };
   const handleSubmit = (e) => {
     e.preventDefault();
-    for (let i = 0; i < input.length; i++)
-      // if (isAlphanumeric(input[i])) {
-      if (!isNaN(input[i])) setAlert("The password is alphanumeric");
-    //
+    const isAlphabet = /[a-zA-z]/.test(input);
+    const isNumber = /[0-9]/.test(input);
+    if (isAlphabet && isNumber) {
+      setAlert("The password is alphanumeric");
+    } else {
+      setAlert("The Password isn't alphanumeric");
+    }
 
     setTimeout(() => {
       setAlert("");
-      setInput("");
     }, 2000);
+    setInput("");
   };
 
   return (
@@ -44,7 +43,7 @@ const Alphanumeric = () => {
           <button type="submit" style={{ marginTop: "1rem" }}>
             Check
           </button>
-          <h4 style={{ height: "2rem" }}>{alert}</h4>
+          <h4 style={{ height: "2rem", color: "orange" }}>{alert}</h4>
         </div>
       </form>
     </div>

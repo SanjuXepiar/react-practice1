@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       <h1>The links given below leads to my projects</h1>
-      <section className="links">
+      <section className="project_tabs">
         <div className="project">
           <Link to="/counter">
             <h4>Counter</h4>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
-      <h1>The links given below leads to my projects</h1>
+      <h1 style={{ color: "orange" }}>React Practice</h1>
       <section className="project_tabs">
         <div className="project">
           <Link to="/counter">

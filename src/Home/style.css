@@ -1,28 +1,23 @@
 .project_tabs {
-  /* width: 100vw;
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 10rem);
-  grid-template-rows: repeat(4, 8rem);
-  column-gap: 15rem;
-  row-gap: 2rem; */
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 0.5rem;
+  padding: 0.8rem;
   justify-content: center;
+  background: #90e0ef;
 }
 .project {
-  background: rgba(155, 141, 154, 0.492);
+  background: #caf0f8;
   text-align: center;
   padding: 1rem;
-  border: 0.4rem solid blue;
   border-radius: 0.3rem;
   width: 25%;
-  outline: 0.1rem solid red;
-  outline-offset: -0.8rem;
 }
 .project a {
   text-decoration: none;
   font-weight: bold;
+  color: #023047;
+}
+.project a :hover {
+  color: #3a86ff;
 }

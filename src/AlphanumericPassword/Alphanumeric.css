@@ -1,0 +1,10 @@
+.alphanumeric {
+  margin: auto;
+  margin-top: 20vh;
+  width: 40vw;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+}
+.password {
+  font-weight: 600;
+}

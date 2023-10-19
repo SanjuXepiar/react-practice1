@@ -1,6 +1,14 @@
 .twitter {
-  width: 40vw;
-  background: rgb(119, 119, 200);
   margin: 0 auto;
-  border-radius: 0.5rem;
+  margin-top: 20vh;
+  width: 40vw;
+}
+.alertText {
+  min-height: 2rem;
+  margin: 0.5rem;
+  font-weight: 500;
+  color: red;
+}
+.textbox {
+  background: #c5d6fc;
 }

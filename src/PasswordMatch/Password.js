@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Password.css";
 import { useState } from "react";
 const Password = () => {
+  const navigate = useNavigate();
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
   const [alert, setAlert] = useState("");
@@ -22,37 +24,48 @@ const Password = () => {
   };
 
   return (
-    <form onSubmit={checkPassword}>
-      <div className="passwordMatch">
-        <h1>Password Match</h1>
+    <>
+      <form onSubmit={checkPassword}>
+        <div className="passwordMatch">
+          <h1 style={{ textDecorationLine: "underline" }}>Password Match</h1>
+          <div className="inputs">
+            <label htmlFor="password">Password :</label>
+            <input
+              type="password"
+              value={input1}
+              autoComplete="off"
+              onChange={(e) => setInput1(e.target.value)}
+            />
 
-        <div className="inputs">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            value={input1}
-            onChange={(e) => setInput1(e.target.value)}
-          />
-          <br />
-          <label htmlFor="checkPassword">Check-Password:</label>
+            <br />
+            <br />
 
-          <input
-            type="password"
-            value={input2}
-            onChange={(e) => setInput2(e.target.value)}
-          />
-          <br />
-          <button
-            type="submit"
-            style={{ cursor: "pointer", marginTop: "1rem" }}
-          >
-            Check
-          </button>
+            <label htmlFor="checkPassword">Confirm-Password : </label>
+
+            <input
+              type="password"
+              value={input2}
+              autoComplete="off"
+              onChange={(e) => setInput2(e.target.value)}
+            />
+
+            <br />
+            <button
+              type="submit"
+              style={{ cursor: "pointer", marginTop: "1rem" }}
+            >
+              Check
+            </button>
+          </div>
+          <p style={{ height: "1rem", color: "red", fontWeight: "500" }}>
+            {input1 && alert}
+          </p>
         </div>
-        <br />
-        <p style={{ height: "2rem" }}>{input1 && alert}</p>
-      </div>
-    </form>
+      </form>
+      <button className="backButton" onClick={() => navigate("/")}>
+        Back
+      </button>
+    </>
   );
 };
 

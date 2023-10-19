@@ -1,26 +1,41 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Twitter.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Twitter = () => {
+  const navigate = useNavigate();
   const [alert, setAlert] = useState("");
   const [count, setCount] = useState("");
   const handleChange = (e) => {
     setCount(e.target.value);
-    if (e.target.value.length >= 200) setAlert("Exced limit");
+    if (e.target.value.length >= 200) setAlert("Exceeded limit...");
   };
-  setTimeout(() => {
-    setAlert("");
-  }, 1500);
+  useEffect(() => {
+    if (alert) {
+      setTimeout(() => {
+        setAlert("");
+      }, 2000);
+    }
+  }, [alert]);
 
   return (
     <div className="twitter">
-      <h3>This is the TextCounter Project</h3>
-      {alert}
-      <div>
-        <textarea rows={8} cols={50} maxLength={200} onChange={handleChange} />
+      <h1 style={{ textDecorationLine: "underline" }}>Description box</h1>
+      <p className="alertText"> {alert}</p>
+      <div className="textArea">
+        <textarea
+          rows={8}
+          cols={50}
+          maxLength={200}
+          className="textbox"
+          onChange={handleChange}
+        />
         {count.length}/200
       </div>
+      <button className="backButton" onClick={() => navigate("/")}>
+        Back
+      </button>
     </div>
   );
 };

@@ -11,20 +11,19 @@ const Counter = () => {
   };
   return (
     <div className="main">
-      <h3>This is the Counter Project</h3>
+      <h3 style={{ textDecorationLine: "underline" }}>
+        This is the Counter Project
+      </h3>
       <div className="buttons">
-        <button className="counterButton" onClick={handleIncrement}>
-          Increment
-        </button>
         <button className="counterButton" onClick={handleDecrement}>
           Decrement
         </button>
+        <button className="counterButton" onClick={handleIncrement}>
+          Increment
+        </button>
       </div>
-      <br />
-      <div className="underline"></div>
       <div className="count">
-        <h3 className="counterLine">Counter</h3>
-        <p className="counter">{count}</p>
+        <h3 className="counterLine">Counter : {count}</h3>
       </div>
     </div>
   );

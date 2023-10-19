@@ -1,34 +1,23 @@
 .main {
   width: 40vw;
   margin: 0 auto;
-  border: 0.2rem solid rgb(139, 139, 183);
-  border-radius: 1rem;
-  background: rgb(137, 201, 229);
+  margin-top: 20vh;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 .counterButton {
-  background: rgb(125, 57, 57);
-  color: aliceblue;
-  border-radius: 0.5rem;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
   margin: 0.5rem;
+  background: #99eae6;
+  box-shadow: 2px 2px 4px blue;
+  border: 0.2rem solid rgb(18, 18, 21);
+  cursor: pointer;
 }
-.underline {
-  width: 80%;
-  height: 0.2rem;
-  background: blue;
-  margin: 0 auto;
-  border-radius: 50%;
-}
+
 .counterLine {
-  text-decoration: underline;
-  text-shadow: 0.5rem 0.5rem 1.3rem rgb(59, 59, 128);
   color: rgb(15, 15, 243);
-}
-.count {
-  width: 100%;
-  background: rgb(58, 160, 204);
-}
-.counter {
-  font-weight: 800;
-  text-decoration: underline;
-  color: rgb(36, 36, 158);
 }

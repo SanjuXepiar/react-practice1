@@ -26,3 +26,18 @@
 .todoList-Icons {
   display: flex;
 }
+/* mobileScreen */
+@media screen and (max-width: 750px) {
+  .todoList {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .todoList-Task {
+    margin: 0 1rem;
+  }
+  .todoList-Icons {
+    margin: 0 1rem;
+  }
+}

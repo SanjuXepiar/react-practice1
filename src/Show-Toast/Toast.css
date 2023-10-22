@@ -1,3 +1,22 @@
+.toastComponent {
+  text-align: center;
+}
+.toast {
+  width: 12rem;
+  position: absolute;
+  top: calc(50vh - 79px);
+  left: calc(100vw - 12rem);
+}
+.default {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f7e1ca;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  margin: 1rem;
+}
 .hide {
-  transform: translateX(-100%);
+  display: none;
 }

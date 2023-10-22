@@ -1,34 +1,36 @@
 import React from "react";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, removeItem }) => {
   return (
-    <div className="cartList">
+    <section>
       <h1>Cart List</h1>
       <p> Total items selected : {cart.length}</p>
-      {cart.map((items) => {
-        return (
-          <div className="contents" key={items.id}>
-            <div className="contents-img">
-              <img
-                src={items.img}
-                alt={items.name}
-                style={{
-                  width: "12rem",
-                  height: "10rem",
-                  border: ".1rem solid blue",
-                  borderRadius: ".2rem",
-                }}
-              />
+      <div className="cartList">
+        {cart.map((items) => {
+          let { img, name, id, price, quantity } = items;
+          return (
+            <div className="contents" key={id}>
+              <div className="contents-img">
+                <img
+                  src={img}
+                  alt={name}
+                  style={{
+                    width: "8rem",
+                    height: "5rem",
+                  }}
+                />
+              </div>
+              <div className="contents-desc">
+                <p>{name}</p>
+                <button onClick={() => removeItem(id)}>Remove</button>
+                <p>Rs: {price}</p>
+              </div>
+              <p style={{ fontWeight: "500" }}>Quantity:{quantity}</p>
             </div>
-            <div className="contents-desc">
-              <h5>{items.name}</h5>
-              <p style={{ fontWeight: "500" }}>Rs: {items.price}</p>
-            </div>
-            <p>Quantity:{items.quantity}</p>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </section>
   );
 };
 

@@ -24,15 +24,9 @@ const Twitter = () => {
       <h1 style={{ textDecorationLine: "underline" }}>Description box</h1>
       <p className="alertText"> {alert}</p>
       <div className="textArea">
-        <textarea
-          rows={8}
-          cols={50}
-          maxLength={200}
-          className="textbox"
-          onChange={handleChange}
-        />
-        {count.length}/200
+        <textarea rows={6} cols={40} maxLength={200} onChange={handleChange} />
       </div>
+      {count.length}/200
       <button className="backButton" onClick={() => navigate("/")}>
         Back
       </button>

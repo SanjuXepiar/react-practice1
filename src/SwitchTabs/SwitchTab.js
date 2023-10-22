@@ -10,28 +10,29 @@ const SwitchTab = () => {
     setTab(type);
   };
   return (
-    <div>
+    <div className="tabsContainer">
       <h1>Switch-Tabs</h1>
-      <div style={{ width: "20vw", height: ".3rem," }}></div>
-      <button
-        style={{ background: tab === "tab1" && "red" }}
-        onClick={() => handleTab("tab1")}
-      >
-        Tab1
-      </button>
-      <button
-        style={{ background: tab === "tab2" && "green" }}
-        onClick={() => handleTab("tab2")}
-      >
-        Tab2
-      </button>
-      <button
-        style={{ background: tab === "tab3" && "blue" }}
-        onClick={() => handleTab("tab3")}
-      >
-        Tab3
-      </button>
-      <div>
+      <div className="tabs">
+        <button
+          style={{ background: tab === "tab1" && "red", cursor: "pointer" }}
+          onClick={() => handleTab("tab1")}
+        >
+          Tab1
+        </button>
+        <button
+          style={{ background: tab === "tab2" && "green", cursor: "pointer" }}
+          onClick={() => handleTab("tab2")}
+        >
+          Tab2
+        </button>
+        <button
+          style={{ background: tab === "tab3" && "blue", cursor: "pointer" }}
+          onClick={() => handleTab("tab3")}
+        >
+          Tab3
+        </button>
+      </div>
+      <div className="twitterToast">
         {tab === "tab1" && <Tab1 />}
         {tab === "tab2" && <Tab2 />}
         {tab === "tab3" && <Tab3 />}

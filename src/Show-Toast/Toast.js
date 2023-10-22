@@ -6,20 +6,13 @@ const Toast = () => {
   const showToast = () => {
     setShow(!show);
   };
+
   return (
-    <div>
-      <h1 style={{ marginBottom: "0" }}>........Toast .........</h1>
-      <div
-        style={{
-          height: ".2rem",
-          width: "30vw",
-          margin: "auto",
-          background: "red",
-          marginBottom: "2rem",
-        }}
-      ></div>
-      <button onClick={showToast}> {show ? "Hide-Toast" : "Show-Toast"}</button>
-      <div>{show && <ShowToast />}</div>
+    <div className="toastComponent">
+      <h1>........Toast .........</h1>
+
+      <button onClick={showToast}> {show ? "HideToast" : "ShowToast"}</button>
+      <div className="toast">{show && <ShowToast />}</div>
     </div>
   );
 };

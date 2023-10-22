@@ -23,36 +23,38 @@ const Alphanumeric = () => {
   };
 
   return (
-    <>
-      <div className="alphanumeric">
-        <h1 style={{ textDecorationLine: "underline" }}>
-          Alphanumeric Password
-        </h1>
+    <section className="alphanumeric">
+      <div className="alphanumericContents">
+        <h1 style={{ marginTop: "0" }}>Alphanumeric Password</h1>
         <form onSubmit={handleSubmit}>
-          <div className="password">
-            <label htmlFor="password">Enter Password : </label>
+          <div className="alphanumericPassword">
+            <label htmlFor="password" style={{ fontWeight: "600" }}>
+              Enter Password :{" "}
+            </label>
             <input
+              className="alphanumericInput"
               type="text"
+              placeholder="password"
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
-
             <br />
-            <button
-              type="submit"
-              style={{ marginTop: "1.5rem", background: "#C5D6FC" }}
-            >
-              Check
-            </button>
-            <h4 style={{ height: "2rem", color: "red" }}>{alert}</h4>
           </div>
+          <button
+            type="submit"
+            disabled={input.length === 0}
+            style={{ backgroundColor: "#c5d6fc" }}
+          >
+            Check
+          </button>
         </form>
       </div>
+      <h4 style={{ height: "2rem", color: "red" }}>{alert}</h4>
 
       <button className="backButton">
         <Link to="/">Back</Link>
       </button>
-    </>
+    </section>
   );
 };
 

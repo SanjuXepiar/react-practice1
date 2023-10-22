@@ -13,21 +13,19 @@ import Todo from "./Todo-StrikeThrough/Todo";
 import Home from "./Home/Home";
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/twitter" element={<Twitter />} />
-        <Route path="/password" element={<Password />} />
-        <Route path="/alphanumeric" element={<Alphanumeric />} />
-        <Route path="/disable" element={<Disable />} />
-        <Route path="/showhide" element={<ShowHide />} />
-        <Route path="/addcart" element={<AddCart />} />
-        <Route path="/switchTab" element={<SwitchTab />} />
-        <Route path="/toast" element={<Toast />} />
-        <Route path="/strikeThrough" element={<Todo />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/counter" element={<Counter />} />
+      <Route path="/twitter" element={<Twitter />} />
+      <Route path="/password" element={<Password />} />
+      <Route path="/alphanumeric" element={<Alphanumeric />} />
+      <Route path="/disable" element={<Disable />} />
+      <Route path="/showhide" element={<ShowHide />} />
+      <Route path="/addcart" element={<AddCart />} />
+      <Route path="/switchTab" element={<SwitchTab />} />
+      <Route path="/toast" element={<Toast />} />
+      <Route path="/strikeThrough" element={<Todo />} />
+    </Routes>
   );
 }
 

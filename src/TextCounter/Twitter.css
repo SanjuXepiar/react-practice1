@@ -1,14 +1,16 @@
 .twitter {
-  margin: 0 auto;
-  margin-top: 20vh;
-  width: 40vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.twitterContents {
+  border: 1px solid black;
 }
 .alertText {
-  min-height: 2rem;
-  margin: 0.5rem;
+  min-height: 1.5rem;
   font-weight: 500;
   color: red;
-}
-.textbox {
-  background: #c5d6fc;
+  margin: 0;
 }

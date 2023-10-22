@@ -1,5 +1,6 @@
 import React from "react";
 import "./ShowHide.css";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { BiSolidShow, BiSolidHide } from "react-icons/bi";
 const ShowHide = () => {
@@ -10,38 +11,25 @@ const ShowHide = () => {
     setShow(!show);
   };
   return (
-    <div>
-      <h1>Show/Hide- Password</h1>
-      <form onSubmit={handleShowHide}>
-        <div
-          style={{
-            width: "40vw",
-            minHeight: "5rem",
-            background: " rgb(122, 122, 219)",
-            margin: "0 auto",
-            border: ".2rem solid blue",
-            borderRadius: ".3rem",
-          }}
-        >
+    <div className="showHide">
+      <div className="showHideContent">
+        <h1 style={{ marginTop: "0" }}>Show/Hide- Password</h1>
+        <form className="showHideForm" onSubmit={handleShowHide}>
           <label htmlFor="password" style={{ fontWeight: "500" }}>
             Password :{" "}
           </label>
           <input
             type={show ? "text" : "password"}
             onChange={(e) => e.target.value}
-            style={{ marginTop: "2rem", padding: ".2rem" }}
           />
-          <button
-            type="submit"
-            style={{
-              marginLeft: "1rem",
-              padding: "0 .5rem",
-            }}
-          >
+          <button type="submit" className="eyeButton">
             {show ? <BiSolidHide /> : <BiSolidShow />}
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
+      <button className="backButton">
+        <Link to="/">Back</Link>
+      </button>
     </div>
   );
 };

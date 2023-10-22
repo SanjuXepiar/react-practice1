@@ -7,10 +7,10 @@ const ShowToast = () => {
     setDisable(true);
   };
   return (
-    <div className={disable ? "hide" : ""}>
-      <h3>ToastComponent</h3>
+    <section className={`default ${disable ? "hide" : " "}`}>
+      <h3 style={{ marginTop: "0" }}>ToastComponent</h3>
       <button onClick={hideToast}>Hide</button>
-    </div>
+    </section>
   );
 };
 

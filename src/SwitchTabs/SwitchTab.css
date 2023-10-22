@@ -1,6 +1,55 @@
+.tabsContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 button {
   margin: 0 1rem;
   padding: 0.2rem 0.5rem;
-  border: 0.2rem solid grey;
+  border: 2px solid rgb(8, 8, 8);
   border-radius: 0.3rem;
+}
+/* .toast {
+  position: absolute;
+  top: 5%;
+  left: 80%;
+  transform: translate(10%);
+  transition: 0.3s;
+} */
+.backButton {
+  text-decoration: underline;
+  font-weight: 600;
+  border-radius: 0.3rem;
+}
+.twitterToast {
+  width: 40vw;
+  height: 16vh;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+.tab1 {
+  background: red;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tab2 {
+  background: green;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tab3 {
+  background: blue;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

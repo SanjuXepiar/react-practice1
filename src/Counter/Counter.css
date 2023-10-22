@@ -1,9 +1,15 @@
 .main {
-  width: 40vw;
-  margin: 0 auto;
-  margin-top: 20vh;
-  border: 2px solid black;
-  border-radius: 0.5rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.mainContainer {
+  border: 1px solid black;
+  padding: 0 1.5rem;
+  border-radius: 0.3rem;
 }
 .buttons {
   display: flex;
@@ -13,9 +19,8 @@
 .counterButton {
   font-weight: 600;
   padding: 0.2rem 0.7rem;
-  margin: 0.5rem;
   background: #99eae6;
-  box-shadow: 2px 2px 4px blue;
+  box-shadow: 2px 2px 4px rgb(94, 94, 139);
   border: 0.2rem solid rgb(18, 18, 21);
   cursor: pointer;
 }

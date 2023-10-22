@@ -1,5 +1,28 @@
-.todoList {
+.todoStrikeThrough {
+  text-align: center;
+}
+.todoInputActions {
   display: flex;
   justify-content: center;
+}
+.todoInputActions > input {
+  background: #618ffa;
+  border-radius: 0.3rem;
+}
+.todoInputActions > button {
+  cursor: pointer;
+  background: #d9dffc;
+}
+.todoList {
+  width: 30vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+.todoList-Task {
+  display: flex;
+}
+.todoList-Icons {
+  display: flex;
 }

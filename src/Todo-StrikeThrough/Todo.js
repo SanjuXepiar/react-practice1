@@ -60,18 +60,10 @@ const Todo = () => {
   };
   //
   return (
-    <div>
-      <h1 style={{ marginBottom: "0" }}>Todo-Strike-Through</h1>
-      <div
-        style={{
-          height: ".3rem",
-          width: "30vw",
-          margin: "auto",
-          borderRadius: "5rem",
-          background: "red",
-        }}
-      ></div>
-      <div style={{ marginTop: "2rem" }}>
+    <div className="todoStrikeThrough">
+      <h1 style={{ textDecorationLine: "underline" }}>Todo-Strike-Through</h1>
+
+      <div className="todoInputActions">
         <input
           type="text"
           value={input}
@@ -87,50 +79,54 @@ const Todo = () => {
           todo.length !== 0 &&
           task.taskName && (
             <div key={task.id} className="todoList">
-              <h3
-                onClick={() => handleStrike(task)}
-                style={{
-                  cursor: "pointer",
-                  textDecorationLine: task.strike && "line-through",
-                  color: task.strike && "blue",
-                }}
-              >
-                {task.taskName}
-              </h3>
-
-              {task.taskName && (
-                <BiSolidLike
+              <div className="todoList-Task">
+                <h3
+                  onClick={() => handleStrike(task)}
                   style={{
-                    width: "1.5rem",
-                    height: "1.2rem",
                     cursor: "pointer",
-                    color: task.like && "blue",
+                    textDecorationLine: task.strike && "line-through",
+                    color: task.strike ? "blue" : "red ",
+                    margin: "0.5rem",
                   }}
-                  onClick={() => handleLike(task)}
-                />
-              )}
+                >
+                  {task.taskName}
+                </h3>
+              </div>
+              <div className="todoList-Icons">
+                {task.taskName && (
+                  <BiSolidLike
+                    style={{
+                      width: "1.5rem",
+                      height: "1.2rem",
+                      cursor: "pointer",
+                      color: task.like && "blue",
+                    }}
+                    onClick={() => handleLike(task)}
+                  />
+                )}
 
-              {task.taskName && (
-                <MdDelete
-                  style={{
-                    width: "1.5rem",
-                    height: "1.2rem",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => handleDelete(task)}
-                />
-              )}
+                {task.taskName && (
+                  <MdDelete
+                    style={{
+                      width: "1.5rem",
+                      height: "1.2rem",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => handleDelete(task)}
+                  />
+                )}
 
-              {task.taskName && (
-                <BiEdit
-                  style={{
-                    width: "1.5rem",
-                    height: "1.2rem",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => handleEdit(task)}
-                />
-              )}
+                {task.taskName && (
+                  <BiEdit
+                    style={{
+                      width: "1.5rem",
+                      height: "1.2rem",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => handleEdit(task)}
+                  />
+                )}
+              </div>
             </div>
           )
         );

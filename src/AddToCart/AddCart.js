@@ -24,10 +24,14 @@ const AddCart = () => {
       return setCart([...cart, { ...item, quantity: 1 }]);
     }
   };
+  const removeItem = (id) => {
+    const filteredCart = cart.filter((item) => item.id !== id);
+    setCart(filteredCart);
+  };
   return (
-    <div>
-      <h1>Add To Cart</h1>
-      <section className="product">
+    <div className="shoppingContents">
+      <h1 style={{ marginTop: "0" }}>Add To Cart</h1>
+      <section className="products">
         {Data.map((item) => {
           const { id, img, name, price } = item;
           return (
@@ -37,27 +41,16 @@ const AddCart = () => {
                   src={img}
                   alt={name}
                   style={{
-                    width: "12rem",
-                    height: "10rem",
-                    border: ".1rem solid blue",
-                    borderRadius: ".2rem",
+                    width: "8rem",
+                    height: "5rem",
                   }}
                 />
               </div>
               <div className="contents-desc">
-                <h5>{name}</h5>
-                <p style={{ fontWeight: "500" }}>Rs: {price}</p>
+                <p>{name}</p>
+                <button onClick={() => handleCart(item)}>Add to Cart</button>
+                <p>Rs: {price}</p>
               </div>
-              <button onClick={() => handleCart(item)}>Add to Cart</button>
-              <div
-                style={{
-                  height: ".2rem",
-                  width: "20%",
-                  background: "green",
-                  margin: "0 auto",
-                  borderRadius: ".3rem",
-                }}
-              ></div>
             </div>
           );
         })}
@@ -65,14 +58,12 @@ const AddCart = () => {
       <div
         style={{
           height: ".4rem",
-          width: "80%",
+          width: "100%",
           background: "red",
-          margin: "0 auto",
           marginTop: "1rem",
         }}
       ></div>
-      {/* ............. */}
-      <Cart cart={cart} />
+      <Cart cart={cart} removeItem={removeItem} />
     </div>
   );
 };

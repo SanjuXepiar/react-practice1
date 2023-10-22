@@ -24,48 +24,55 @@ const Password = () => {
   };
 
   return (
-    <>
+    <section className="passwordMatch">
       <form onSubmit={checkPassword}>
-        <div className="passwordMatch">
-          <h1 style={{ textDecorationLine: "underline" }}>Password Match</h1>
+        <div className="passwordMatchContents">
+          <h1 style={{ marginTop: "0" }}>Password Match</h1>
           <div className="inputs">
-            <label htmlFor="password">Password :</label>
-            <input
-              type="password"
-              value={input1}
-              autoComplete="off"
-              onChange={(e) => setInput1(e.target.value)}
-            />
+            <div className="inputsLabel">
+              <label htmlFor="password">Password :</label>
+              <label htmlFor="checkPassword">Confirm-Password : </label>
+            </div>
+            <div className="inputsInput">
+              <input
+                type="password"
+                value={input1}
+                placeholder="password"
+                autoComplete="off"
+                onChange={(e) => setInput1(e.target.value)}
+              />
 
-            <br />
-            <br />
-
-            <label htmlFor="checkPassword">Confirm-Password : </label>
-
-            <input
-              type="password"
-              value={input2}
-              autoComplete="off"
-              onChange={(e) => setInput2(e.target.value)}
-            />
-
-            <br />
-            <button
-              type="submit"
-              style={{ cursor: "pointer", marginTop: "1rem" }}
-            >
-              Check
-            </button>
+              <input
+                type="password"
+                value={input2}
+                placeholder="confirm password"
+                autoComplete="off"
+                onChange={(e) => setInput2(e.target.value)}
+              />
+            </div>
           </div>
-          <p style={{ height: "1rem", color: "red", fontWeight: "500" }}>
-            {input1 && alert}
-          </p>
+          <button
+            type="submit"
+            style={{ cursor: "pointer", marginTop: "1rem" }}
+          >
+            Check
+          </button>
         </div>
+        <p
+          style={{
+            height: "1rem",
+            color: "red",
+            fontWeight: "500",
+            marginTop: "0",
+          }}
+        >
+          {input1 && alert}
+        </p>
       </form>
       <button className="backButton" onClick={() => navigate("/")}>
         Back
       </button>
-    </>
+    </section>
   );
 };
 

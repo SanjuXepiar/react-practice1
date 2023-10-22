@@ -1,6 +1,7 @@
 import React from "react";
 import "./Disable.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Disable = () => {
   const [input1, setInput1] = useState("");
@@ -13,57 +14,53 @@ const Disable = () => {
     console.log(input1);
     setTimeout(() => {
       setAlert("");
+      setInput1("");
+      setInput2("");
     }, 2000);
   };
 
   //
   return (
-    <div>
-      <h1>Password Disable</h1>
-      <form onSubmit={handleSubmit}>
-        <div
-          style={{
-            width: "40vw",
-            background: "rgb(122, 122, 219)",
-            margin: "0 auto",
-            borderRadius: ".5rem",
-          }}
-        >
-          <label htmlFor="password" style={{ marginRight: "4rem" }}>
-            Old Password :
-          </label>
-          <input
-            style={{ border: ".2rem solid blue", borderRadius: ".3rem" }}
-            type="password"
-            value={input1}
-            onChange={(e) => setInput1(e.target.value)}
-          />
-          <br />
-          <label htmlFor="password" style={{ marginRight: "2rem" }}>
-            Confirm Password :
-          </label>
-          <input
-            style={{ border: ".2rem solid blue", borderRadius: ".3rem" }}
-            type="password"
-            value={input2}
-            onChange={(e) => setInput2(e.target.value)}
-          />
-          <br />
-          <button
-            style={{
-              borderColor: "red",
-              borderRadius: ".3rem",
-              background: "grey",
-            }}
-            type="submit"
-            disabled={input1 !== input2}
-          >
-            Submit
-          </button>
-          <p style={{ marginTop: ".5rem" }}>{alert}</p>
-        </div>
-      </form>
-    </div>
+    <section className="disable">
+      <p style={{ height: "1.2rem", color: "blue", fontWeight: "500" }}>
+        {alert}
+      </p>
+      <div className="disablePasswordButton">
+        <h1 className="disable-title">Password Disable</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="inputs">
+            <div className="inputsLabel">
+              <label htmlFor="password">Old Password :</label>
+              <label htmlFor="password">Confirm Password :</label>
+            </div>
+            <div className="inputsInput">
+              <input
+                type="password"
+                value={input1}
+                onChange={(e) => setInput1(e.target.value)}
+              />
+              <input
+                type="password"
+                value={input2}
+                onChange={(e) => setInput2(e.target.value)}
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <button
+        className="disable-button"
+        type="submit"
+        disabled={input1 !== input2}
+        onClick={handleSubmit}
+      >
+        Submit
+      </button>
+      <button className="backButton">
+        <Link to="/">Back</Link>
+      </button>
+    </section>
   );
 };
 

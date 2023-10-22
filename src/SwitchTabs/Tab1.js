@@ -1,20 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Tab1 = () => {
   return (
-    <div>
-      <h3
-        style={{
-          background: "red",
-          height: "5rem",
-          width: "50vw",
-          margin: "auto",
-          marginTop: "1rem",
-          borderRadius: ".5rem",
-        }}
-      >
-        This is Tab1 Component
-      </h3>
+    <div className="tab1">
+      <h3>This is Tab1 Component</h3>
+      <Link to="/" className="backButton">
+        Back
+      </Link>
     </div>
   );
 };

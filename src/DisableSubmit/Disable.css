@@ -1,0 +1,24 @@
+.disablePasswordButton {
+  /* width: 40vw; */
+  border: 1px solid black;
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+}
+.disable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.disable-title {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+.disable-button {
+  background: #c5d6fc;
+  border-color: #a1aef7;
+  padding: 0.25rem 1rem;
+  margin-top: 1rem;
+}

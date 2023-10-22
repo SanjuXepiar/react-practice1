@@ -12,11 +12,9 @@ const Counter = () => {
     setCount(count - 1);
   };
   return (
-    <>
-      <div className="main">
-        <h3 style={{ textDecorationLine: "underline" }}>
-          This is the Counter Project
-        </h3>
+    <div className="main">
+      <div className="mainContainer">
+        <h3>This is the Counter Project</h3>
         <div className="buttons">
           <button className="counterButton" onClick={handleDecrement}>
             Decrement
@@ -32,7 +30,7 @@ const Counter = () => {
       <button className="backButton" onClick={() => navigate("/")}>
         Back
       </button>
-    </>
+    </div>
   );
 };
 

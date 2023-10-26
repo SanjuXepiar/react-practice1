@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AddCart.css";
 import Data from "./Data";
 import Cart from "./Cart";
@@ -6,6 +6,10 @@ import { useState } from "react";
 const AddCart = () => {
   const [cart, setCart] = useState([]);
   //
+  useEffect(() => {
+    const cartData = JSON.parse(localStorage.getItem("cart"));
+    setCart(cartData);
+  }, []);
   const handleCart = (item) => {
     const inCart = cart.some((product) => product.id === item.id);
     if (inCart) {
@@ -19,15 +23,22 @@ const AddCart = () => {
 
         return product;
       });
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
       setCart(updatedCart);
     } else {
-      return setCart([...cart, { ...item, quantity: 1 }]);
+      localStorage.setItem(
+        "cart",
+        JSON.stringify([...cart, { ...item, quantity: 1 }])
+      );
+      setCart([...cart, { ...item, quantity: 1 }]);
     }
   };
   const removeItem = (id) => {
     const filteredCart = cart.filter((item) => item.id !== id);
+    localStorage.setItem("cart", JSON.stringify(filteredCart));
     setCart(filteredCart);
   };
+
   return (
     <div className="shoppingContents">
       <h1 style={{ marginTop: "0" }}>Add To Cart</h1>

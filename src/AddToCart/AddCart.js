@@ -7,7 +7,7 @@ const AddCart = () => {
   const [cart, setCart] = useState([]);
   //
   useEffect(() => {
-    const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartData = JSON.parse(localStorage.getItem("cart"));
 
     setCart(cartData);
   }, []);
@@ -39,7 +39,6 @@ const AddCart = () => {
     localStorage.setItem("cart", JSON.stringify(filteredCart));
     setCart(filteredCart);
   };
-
   return (
     <div className="shoppingContents">
       <h1 style={{ marginTop: "0" }}>Add To Cart</h1>

@@ -9,7 +9,7 @@ const AddCart = () => {
   useEffect(() => {
     const cartData = JSON.parse(localStorage.getItem("cart"));
 
-    setCart(cartData);
+    setCart(cartData || []);
   }, []);
   const handleCart = (item) => {
     const inCart = cart.some((product) => product.id === item.id);

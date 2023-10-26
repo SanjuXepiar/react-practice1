@@ -2,12 +2,19 @@ import React from "react";
 import "./Todo.css";
 import { BiSolidLike, BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const Todo = () => {
   const [todo, setTodo] = useState([]);
   const [input, setInput] = useState("");
   const [inEdit, setInEdit] = useState("");
   //
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("todo"));
+    if (stored?.length) {
+      setTodo(stored);
+    }
+  }, []);
+
   const handleAdd = () => {
     const newTask = {
       taskName: input,
@@ -16,6 +23,15 @@ const Todo = () => {
       like: false,
     };
     setTodo([newTask, ...todo]);
+
+    const locallyStored = localStorage.getItem("todo");
+    if (locallyStored) {
+      const storedTodo = JSON.parse(locallyStored);
+      const updatedStoredTodo = [...storedTodo, newTask];
+      localStorage.setItem("todo", JSON.stringify(updatedStoredTodo));
+    } else {
+      localStorage.setItem("todo", JSON.stringify([newTask]));
+    }
     setInput("");
   };
   const handleStrike = (task) => {
@@ -26,6 +42,7 @@ const Todo = () => {
       return item;
     });
     setTodo(updatedTodo);
+    localStorage.setItem("todo", JSON.stringify(updatedTodo));
   };
   const handleLike = (task) => {
     const likeUpdate = todo.map((item) => {
@@ -35,10 +52,12 @@ const Todo = () => {
       return item;
     });
     setTodo(likeUpdate);
+    localStorage.setItem("todo", JSON.stringify(likeUpdate));
   };
   const handleDelete = (task) => {
     const deleteUpdate = todo.filter((item) => item.id !== task.id);
     setTodo(deleteUpdate);
+    localStorage.setItem("todo", JSON.stringify(deleteUpdate));
   };
   const handleEdit = (task) => {
     setInEdit(task);
@@ -55,6 +74,7 @@ const Todo = () => {
       return item;
     });
     setTodo(updatedEdit);
+    localStorage.setItem("todo", JSON.stringify(updatedEdit));
     setInput("");
     setInEdit("");
   };

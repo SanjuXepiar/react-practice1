@@ -24,14 +24,9 @@ const Todo = () => {
     };
     setTodo([newTask, ...todo]);
 
-    // const locallyStored = localStorage.getItem("todo");
-    // if (locallyStored) {
-    //   const storedTodo = JSON.parse(locallyStored);
-    //   const updatedStoredTodo = [...storedTodo, newTask];
-    //   localStorage.setItem("todo", JSON.stringify(updatedStoredTodo));
-    // } else {
+    //
     localStorage.setItem("todo", JSON.stringify([newTask, ...todo]));
-    // }
+
     setInput("");
   };
   const handleStrike = (task) => {

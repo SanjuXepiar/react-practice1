@@ -1,9 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./Password.css";
 import { useState } from "react";
 const Password = () => {
-  const navigate = useNavigate();
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
   const [alert, setAlert] = useState("");
@@ -69,9 +67,6 @@ const Password = () => {
           {input1 && alert}
         </p>
       </form>
-      <button className="backButton" onClick={() => navigate("/")}>
-        Back
-      </button>
     </section>
   );
 };

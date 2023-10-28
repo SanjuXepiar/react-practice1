@@ -1,7 +1,6 @@
 import React from "react";
 import "./Disable.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Disable = () => {
   const [input1, setInput1] = useState("");
@@ -56,9 +55,6 @@ const Disable = () => {
         onClick={handleSubmit}
       >
         Submit
-      </button>
-      <button className="backButton">
-        <Link to="/">Back</Link>
       </button>
     </section>
   );

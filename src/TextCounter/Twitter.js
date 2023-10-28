@@ -1,10 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./Twitter.css";
 import { useState, useEffect } from "react";
 
 const Twitter = () => {
-  const navigate = useNavigate();
   const [alert, setAlert] = useState("");
   const [count, setCount] = useState("");
   const handleChange = (e) => {
@@ -27,9 +25,6 @@ const Twitter = () => {
         <textarea rows={6} cols={40} maxLength={200} onChange={handleChange} />
       </div>
       {count.length}/200
-      <button className="backButton" onClick={() => navigate("/")}>
-        Back
-      </button>
     </div>
   );
 };

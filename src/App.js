@@ -11,11 +11,19 @@ import SwitchTab from "./SwitchTabs/SwitchTab";
 import Toast from "./Show-Toast/Toast";
 import Todo from "./Todo-StrikeThrough/Todo";
 import Home from "./Home/Home";
+import Wrapper from "./Wrapper/Wrapper";
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/counter" element={<Counter />} />
+      <Route
+        path="/counter"
+        element={
+          <Wrapper>
+            <Counter />
+          </Wrapper>
+        }
+      />
       <Route path="/twitter" element={<Twitter />} />
       <Route path="/password" element={<Password />} />
       <Route path="/alphanumeric" element={<Alphanumeric />} />

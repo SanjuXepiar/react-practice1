@@ -5,7 +5,7 @@ import Tab2 from "./Tab2";
 import Tab3 from "./Tab3";
 import { useState } from "react";
 const SwitchTab = () => {
-  const [tab, setTab] = useState("");
+  const [tab, setTab] = useState("Tab1");
   const handleTab = (type) => {
     setTab(type);
   };

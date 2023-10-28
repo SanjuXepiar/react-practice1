@@ -1,6 +1,5 @@
 import React from "react";
 import "./ShowHide.css";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { BiSolidShow, BiSolidHide } from "react-icons/bi";
 const ShowHide = () => {
@@ -27,9 +26,6 @@ const ShowHide = () => {
           </button>
         </form>
       </div>
-      <button className="backButton">
-        <Link to="/">Back</Link>
-      </button>
     </div>
   );
 };

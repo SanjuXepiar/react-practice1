@@ -1,6 +1,5 @@
 import React from "react";
 import "./Alphanumeric.css";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 const Alphanumeric = () => {
   const [input, setInput] = useState("");
@@ -50,10 +49,6 @@ const Alphanumeric = () => {
         </form>
       </div>
       <h4 style={{ height: "2rem", color: "red" }}>{alert}</h4>
-
-      <button className="backButton">
-        <Link to="/">Back</Link>
-      </button>
     </section>
   );
 };

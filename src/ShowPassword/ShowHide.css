@@ -7,17 +7,18 @@
   text-align: center;
 }
 .showHideContent {
-  border: 1px solid black;
-  padding: 0.8rem 1.22rem;
+  width: 35vw;
+  border: 1px solid #3333ff;
+  background: #f0f9f9;
+  padding: 2rem 1.5rem;
   border-radius: 0.3rem;
 }
 .showHideForm {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .showHideForm > input {
-  border: 2px solid rgb(52, 52, 76);
+  border: 1px solid rgb(52, 52, 76);
   border-radius: 0.3rem;
   box-shadow: 2px 2px 4px grey;
   background: #ddf8f7;
@@ -25,6 +26,8 @@
   margin-left: 0.5rem;
 }
 .eyeButton {
+  display: flex;
+  align-items: center;
   font-size: large;
   border: none;
   background: none;

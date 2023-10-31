@@ -1,4 +1,4 @@
-.main {
+.counter {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,24 +7,18 @@
   text-align: center;
 }
 .mainContainer {
-  border: 1px solid black;
+  width: 30vw;
+  border: 1px solid #3333ff;
+  background: #f0f9f9;
   padding: 0 1.5rem;
   border-radius: 0.3rem;
 }
-.buttons {
+.countButtons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.5rem;
 }
-/* .counterButton {
-  font-weight: 600;
-  padding: 0.2rem 0.7rem;
-  background: #99eae6;
-  box-shadow: 2px 2px 4px rgb(94, 94, 139);
-  border: 0.2rem solid rgb(18, 18, 21);
-  cursor: pointer;
-} */
-
 .counterLine {
   color: rgb(15, 15, 243);
 }

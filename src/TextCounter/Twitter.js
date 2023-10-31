@@ -7,7 +7,7 @@ const Twitter = () => {
   const [count, setCount] = useState("");
   const handleChange = (e) => {
     setCount(e.target.value);
-    if (e.target.value.length >= 200) setAlert("Exceeded limit...");
+    if (e.target.value.length >= 200) setAlert("Exceeded letter limit...");
   };
   useEffect(() => {
     if (alert) {
@@ -21,8 +21,8 @@ const Twitter = () => {
     <div className="twitter">
       <h1 style={{ textDecorationLine: "underline" }}>Description box</h1>
       <p className="alertText"> {alert}</p>
-      <div className="textArea">
-        <textarea rows={6} cols={40} maxLength={200} onChange={handleChange} />
+      <div className="twitterTextArea">
+        <textarea rows={8} cols={40} maxLength={200} onChange={handleChange} />
       </div>
       {count.length}/200
     </div>

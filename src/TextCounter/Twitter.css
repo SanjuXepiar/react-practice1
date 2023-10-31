@@ -5,12 +5,14 @@
   justify-content: center;
   align-items: center;
 }
-.twitterContents {
-  border: 1px solid black;
-}
+
 .alertText {
   min-height: 1.5rem;
   font-weight: 500;
   color: red;
-  margin: 0;
+}
+.twitterTextArea textarea {
+  background: #f0f9f9;
+  border: 1px solid #3333ff;
+  border-radius: 0.3rem;
 }

@@ -13,22 +13,13 @@ const SwitchTab = () => {
     <div className="tabsContainer">
       <h1>Switch-Tabs</h1>
       <div className="tabs">
-        <button
-          style={{ background: tab === "tab1" && "red", cursor: "pointer" }}
-          onClick={() => handleTab("tab1")}
-        >
+        <button className="btn" onClick={() => handleTab("tab1")}>
           Tab1
         </button>
-        <button
-          style={{ background: tab === "tab2" && "green", cursor: "pointer" }}
-          onClick={() => handleTab("tab2")}
-        >
+        <button className="btn" onClick={() => handleTab("tab2")}>
           Tab2
         </button>
-        <button
-          style={{ background: tab === "tab3" && "blue", cursor: "pointer" }}
-          onClick={() => handleTab("tab3")}
-        >
+        <button className="btn" onClick={() => handleTab("tab3")}>
           Tab3
         </button>
       </div>

@@ -17,9 +17,30 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/counter" element={<Counter />} />
-      <Route path="/twitter" element={<Twitter />} />
-      <Route path="/password" element={<Password />} />
+      <Route
+        path="/counter"
+        element={
+          <Wrapper>
+            <Counter />{" "}
+          </Wrapper>
+        }
+      />
+      <Route
+        path="/twitter"
+        element={
+          <Wrapper>
+            <Twitter />
+          </Wrapper>
+        }
+      />
+      <Route
+        path="/password"
+        element={
+          <Wrapper>
+            <Password />
+          </Wrapper>
+        }
+      />
       <Route
         path="/alphanumeric"
         element={
@@ -28,20 +49,55 @@ function App() {
           </Wrapper>
         }
       />
-      <Route path="/disable" element={<Disable />} />
-      <Route path="/showhide" element={<ShowHide />} />
+      <Route
+        path="/disable"
+        element={
+          <Wrapper>
+            <Disable />
+          </Wrapper>
+        }
+      />
+      <Route
+        path="/showhide"
+        element={
+          <Wrapper>
+            <ShowHide />
+          </Wrapper>
+        }
+      />
       <Route
         path="/addcart"
         element={
-          <Wrapper>
+          <Wrapper title="Add to Cart">
             <AddCart />
           </Wrapper>
         }
       />
       <Route path="cart" element={<Cart />} />
-      <Route path="/switchTab" element={<SwitchTab />} />
-      <Route path="/toast" element={<Toast />} />
-      <Route path="/strikeThrough" element={<Todo />} />
+      <Route
+        path="/switchTab"
+        element={
+          <Wrapper>
+            <SwitchTab />
+          </Wrapper>
+        }
+      />
+      <Route
+        path="/toast"
+        element={
+          <Wrapper>
+            <Toast />
+          </Wrapper>
+        }
+      />
+      <Route
+        path="/strikeThrough"
+        element={
+          <Wrapper>
+            <Todo />
+          </Wrapper>
+        }
+      />
     </Routes>
   );
 }

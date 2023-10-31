@@ -49,10 +49,7 @@ const Password = () => {
               />
             </div>
           </div>
-          <button
-            type="submit"
-            style={{ cursor: "pointer", marginTop: "1rem" }}
-          >
+          <button type="submit" className="btn" style={{ marginTop: "1rem" }}>
             Check
           </button>
         </div>

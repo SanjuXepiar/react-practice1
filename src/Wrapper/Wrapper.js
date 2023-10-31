@@ -10,12 +10,8 @@ function Wrapper({ children, title }) {
   return (
     <>
       <div className="wrapperHeader">
-        <button
-          className="btn "
-          style={{ background: "none", border: "none" }}
-          onClick={handleBackBtn}
-        >
-          <h2 style={{ textDecorationLine: "underline" }}>Back</h2>
+        <button className="wrapperButton " onClick={handleBackBtn}>
+          Back
         </button>
       </div>
       {children}

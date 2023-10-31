@@ -13,8 +13,13 @@ const ShowHide = () => {
     <div className="showHide">
       <div className="showHideContent">
         <h1 style={{ marginTop: "0" }}>Show/Hide- Password</h1>
-        <form className="showHideForm" onSubmit={handleShowHide}>
-          <label htmlFor="password" style={{ fontWeight: "500" }}>
+        <form className="showHideForm " onSubmit={handleShowHide}>
+          <label
+            htmlFor="password"
+            style={{
+              fontWeight: "500",
+            }}
+          >
             Password :{" "}
           </label>
           <input

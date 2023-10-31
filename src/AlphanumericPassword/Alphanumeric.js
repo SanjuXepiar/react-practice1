@@ -39,11 +39,7 @@ const Alphanumeric = () => {
             />
             <br />
           </div>
-          <button
-            type="submit"
-            disabled={input.length === 0}
-            style={{ backgroundColor: "#c5d6fc" }}
-          >
+          <button type="submit" disabled={input.length === 0} className="btn">
             Check
           </button>
         </form>

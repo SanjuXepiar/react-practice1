@@ -22,7 +22,7 @@ const Disable = () => {
   return (
     <section className="disable">
       <p style={{ height: "1.2rem", color: "blue", fontWeight: "500" }}>
-        {alert}
+        {input1.length !== 0 && alert}
       </p>
       <div className="disablePasswordButton">
         <h1 className="disable-title">Password Disable</h1>
@@ -36,11 +36,13 @@ const Disable = () => {
               <input
                 type="password"
                 value={input1}
+                className="input"
                 onChange={(e) => setInput1(e.target.value)}
               />
               <input
                 type="password"
                 value={input2}
+                className="input"
                 onChange={(e) => setInput2(e.target.value)}
               />
             </div>
@@ -49,7 +51,8 @@ const Disable = () => {
       </div>
 
       <button
-        className="disable-button"
+        className=" btn"
+        style={{ marginTop: "1rem" }}
         type="submit"
         disabled={input1 !== input2}
         onClick={handleSubmit}

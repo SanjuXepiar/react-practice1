@@ -10,19 +10,19 @@ const Counter = () => {
     setCount(count - 1);
   };
   return (
-    <div className="main">
+    <div className="counter">
       <div className="mainContainer">
         <h3>This is the Counter Project</h3>
-        <div className="buttons">
-          <button className="counterButton" onClick={handleDecrement}>
+        <div className="countButtons">
+          <button className="btn" onClick={handleDecrement}>
             Decrement
           </button>
-          <button className="counterButton" onClick={handleIncrement}>
+          <button className="btn" onClick={handleIncrement}>
             Increment
           </button>
         </div>
         <div className="count">
-          <h3 className="counterLine">Counter : {count}</h3>
+          <h3 className="counterLine">Count : {count}</h3>
         </div>
       </div>
     </div>

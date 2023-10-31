@@ -1,36 +1,32 @@
 .tabsContainer {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #f0f9f9;
 }
-/* button {
-  margin: 0 1rem;
-  padding: 0.2rem 0.5rem;
-  border: 2px solid rgb(8, 8, 8);
-  border-radius: 0.3rem;
-} */
-/* .toast {
-  position: absolute;
-  top: 5%;
-  left: 80%;
-  transform: translate(10%);
-  transition: 0.3s;
-} */
-.backButton {
-  text-decoration: underline;
-  font-weight: 600;
-  border-radius: 0.3rem;
+.tabs {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
 }
+
 .twitterToast {
   width: 40vw;
-  height: 16vh;
-  padding: 2rem;
+  height: 30vh;
+  /* border: 1px solid #3333ff; */
+  padding: 2rem 1.5rem;
+  border-radius: 0.3rem;
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
 }
 .tab1 {
-  background: red;
+  /* background: red; */
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -38,7 +34,7 @@
   align-items: center;
 }
 .tab2 {
-  background: green;
+  /* background: green; */
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -46,7 +42,7 @@
   align-items: center;
 }
 .tab3 {
-  background: blue;
+  /* background: blue; */
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;

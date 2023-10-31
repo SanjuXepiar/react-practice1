@@ -16,14 +16,14 @@
   justify-content: center;
   gap: 1rem;
 }
-.counterButton {
+/* .counterButton {
   font-weight: 600;
   padding: 0.2rem 0.7rem;
   background: #99eae6;
   box-shadow: 2px 2px 4px rgb(94, 94, 139);
   border: 0.2rem solid rgb(18, 18, 21);
   cursor: pointer;
-}
+} */
 
 .counterLine {
   color: rgb(15, 15, 243);

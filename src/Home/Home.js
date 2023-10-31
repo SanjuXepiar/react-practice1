@@ -38,7 +38,7 @@ function Home() {
         </div>
         <div className="project">
           <Link to="/addcart">
-            <h4>Add To Cart</h4>
+            <h4>Simple Cart</h4>
           </Link>
         </div>
         <div className="project">

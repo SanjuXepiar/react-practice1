@@ -1,47 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./AddCart.css";
 import Data from "./Data";
-import Cart from "./Cart";
-import { useState } from "react";
+import { useCartContext } from "./CartContext";
 const AddCart = () => {
-  const [cart, setCart] = useState([]);
-  //
-  useEffect(() => {
-    const cartData = JSON.parse(localStorage.getItem("cart"));
-
-    setCart(cartData || []);
-  }, []);
-  const handleCart = (item) => {
-    const inCart = cart.some((product) => product.id === item.id);
-    if (inCart) {
-      const updatedCart = cart.map((product) => {
-        if (product.id === item.id) {
-          return {
-            ...product,
-            quantity: product.quantity + 1,
-          };
-        }
-
-        return product;
-      });
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-      setCart(updatedCart);
-    } else {
-      localStorage.setItem(
-        "cart",
-        JSON.stringify([...cart, { ...item, quantity: 1 }])
-      );
-      setCart([...cart, { ...item, quantity: 1 }]);
-    }
-  };
-  const removeItem = (id) => {
-    const filteredCart = cart.filter((item) => item.id !== id);
-    localStorage.setItem("cart", JSON.stringify(filteredCart));
-    setCart(filteredCart);
-  };
+  const { handleCart } = useCartContext();
   return (
     <div className="shoppingContents">
-      <h1 style={{ marginTop: "0" }}>Add To Cart</h1>
       <section className="products">
         {Data.map((item) => {
           const { id, img, name, price } = item;
@@ -52,29 +16,26 @@ const AddCart = () => {
                   src={img}
                   alt={name}
                   style={{
-                    width: "8rem",
-                    height: "5rem",
+                    width: "6rem",
+                    height: "6rem",
                   }}
                 />
               </div>
               <div className="contents-desc">
-                <p>{name}</p>
-                <button onClick={() => handleCart(item)}>Add to Cart</button>
-                <p>Rs: {price}</p>
+                <p style={{ margin: "2px" }}>{name}</p>
+                <button
+                  className="btn"
+                  style={{ margin: "2px" }}
+                  onClick={() => handleCart(item)}
+                >
+                  Add to Cart
+                </button>
+                <p style={{ margin: "2px" }}>Rs: {price}</p>
               </div>
             </div>
           );
         })}
       </section>
-      <div
-        style={{
-          height: ".4rem",
-          width: "100%",
-          background: "red",
-          marginTop: "1rem",
-        }}
-      ></div>
-      <Cart cart={cart} removeItem={removeItem} />
     </div>
   );
 };

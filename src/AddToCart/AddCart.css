@@ -1,8 +1,10 @@
 .shoppingContents {
   min-height: 100vh;
   text-align: center;
-  background: #c5d6fc;
+  background: white;
+  border-bottom: 2px solid black;
 }
+
 .products {
   display: flex;
   justify-content: center;
@@ -11,14 +13,25 @@
 .contents {
   width: 23%;
   padding: 0.3rem;
-  border: 1px solid black;
-  border-radius: 0.5rem;
+  border: 0.1px solid #b4b4bb;
+  border-radius: 0.2rem;
   margin: 0.3rem;
+  background: white;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.contents:hover {
+  box-shadow: 2px 2px 4px #b4b4bb;
+}
+.contents:hover .contents-desc {
+  transform: translateY(-8px);
+  text-shadow: 2px 2px 4px #919195;
+}
+.contents-desc {
+  transition: all 0.6s ease 0.2s;
 }
 .contents-desc {
   width: 90%;
@@ -27,12 +40,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.contents-desc > button {
-  border: 1px solid #f8efa0;
-  background: #f8efa0;
-  padding: 0.2rem 0.5rem;
-  cursor: pointer;
-}
+
 .cartList {
   display: flex;
   justify-content: center;
@@ -43,10 +51,6 @@
 @media screen and (max-width: 1180px) {
   .contents {
     width: 40%;
-    padding: 0.3rem;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    margin: 0.3rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -61,6 +65,7 @@
     align-items: center;
   }
 }
+
 @media screen and (max-width: 700px) {
   .contents {
     display: flex;

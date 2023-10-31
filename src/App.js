@@ -20,13 +20,20 @@ function App() {
       <Route path="/counter" element={<Counter />} />
       <Route path="/twitter" element={<Twitter />} />
       <Route path="/password" element={<Password />} />
-      <Route path="/alphanumeric" element={<Alphanumeric />} />
+      <Route
+        path="/alphanumeric"
+        element={
+          <Wrapper>
+            <Alphanumeric />
+          </Wrapper>
+        }
+      />
       <Route path="/disable" element={<Disable />} />
       <Route path="/showhide" element={<ShowHide />} />
       <Route
         path="/addcart"
         element={
-          <Wrapper title="Add to Cart">
+          <Wrapper>
             <AddCart />
           </Wrapper>
         }

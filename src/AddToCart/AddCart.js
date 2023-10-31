@@ -2,10 +2,17 @@ import React from "react";
 import "./AddCart.css";
 import Data from "./Data";
 import { useCartContext } from "./CartContext";
+import { Link } from "react-router-dom";
 const AddCart = () => {
   const { handleCart } = useCartContext();
   return (
     <div className="shoppingContents">
+      <h1 style={{ color: "blue" }}>Add to Cart</h1>
+      <div className="gotoCart">
+        <button className="btn">
+          <Link to="/cart">Go to Cart</Link>
+        </button>
+      </div>
       <section className="products">
         {Data.map((item) => {
           const { id, img, name, price } = item;
@@ -36,6 +43,15 @@ const AddCart = () => {
           );
         })}
       </section>
+
+      <div
+        style={{
+          height: ".4rem",
+          width: "100%",
+          background: "red",
+          marginTop: "1rem",
+        }}
+      ></div>
     </div>
   );
 };

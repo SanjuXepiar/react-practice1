@@ -17,13 +17,6 @@ function Wrapper({ children, title }) {
         >
           <h2 style={{ textDecorationLine: "underline" }}>Back</h2>
         </button>
-        <h1 style={{ color: "blue", textAlign: "center" }}>{title}</h1>
-        <button className="btn" style={{ background: "none", border: "none" }}>
-          <Link to="/cart">
-            {" "}
-            <h2 style={{ textDecorationLine: "underline" }}>Go to Cart</h2>
-          </Link>
-        </button>
       </div>
       {children}
     </>

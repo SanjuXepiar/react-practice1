@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Counter from "./Counter/Counter";
 import Twitter from "./TextCounter/Twitter";
 import Password from "./PasswordMatch/Password";

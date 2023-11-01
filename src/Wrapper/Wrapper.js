@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Wrapper({ children, title }) {
   const navigate = useNavigate();

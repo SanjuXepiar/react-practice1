@@ -9,15 +9,21 @@
 .project {
   background: #caf0f8;
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 0.3rem;
   width: 25%;
+}
+.project :hover {
+  color: #3a86ff;
 }
 .project a {
   text-decoration: none;
   font-weight: bold;
   color: #023047;
+  display: flex;
+  justify-content: center;
 }
-.project a :hover {
-  color: #3a86ff;
+.project a > h4 {
+  height: 100%;
+  width: 100%;
 }

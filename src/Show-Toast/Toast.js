@@ -1,17 +1,17 @@
 import React from "react";
 import ShowToast from "./ShowToast";
-import { useState } from "react";
+import { useToastContext } from "./ToastContext";
 const Toast = () => {
-  const [show, setShow] = useState(false);
-  const showToast = () => {
-    setShow(true);
-  };
+  const { show, showToast } = useToastContext();
 
   return (
     <div className="toastComponent">
       <h1>........Toast .........</h1>
 
-      <button onClick={showToast}> ShowToast</button>
+      <button className="btn" onClick={showToast}>
+        {" "}
+        ShowToast
+      </button>
       <div className="toast">{show && <ShowToast />}</div>
     </div>
   );

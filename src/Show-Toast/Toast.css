@@ -1,22 +1,26 @@
 .toastComponent {
   text-align: center;
+  /* height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
 }
 .toast {
-  width: 12rem;
-  position: absolute;
-  top: calc(50vh - 79px);
-  left: calc(100vw - 12rem);
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #d3eeee;
+  border-radius: 5px;
 }
 .default {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f7e1ca;
+  background-color: #f0f9f9;
+
   border-radius: 0.3rem;
   padding: 0.3rem;
   margin: 1rem;
-}
-.hide {
-  display: none;
 }

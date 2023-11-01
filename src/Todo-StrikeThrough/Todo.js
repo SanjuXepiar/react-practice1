@@ -80,72 +80,75 @@ const Todo = () => {
 
       <div className="todoInputActions">
         <input
+          className="inputsInput"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button onClick={inEdit ? updateEdit : handleAdd}>
+        <button className="btn" onClick={inEdit ? updateEdit : handleAdd}>
           {inEdit ? "Edit-Item" : "Add-Item"}
         </button>
       </div>
 
-      {todo.map((task) => {
-        return (
-          todo.length !== 0 &&
-          task.taskName && (
-            <div key={task.id} className="todoList">
-              <div className="todoList-Task">
-                <h3
-                  onClick={() => handleStrike(task)}
-                  style={{
-                    cursor: "pointer",
-                    textDecorationLine: task.strike && "line-through",
-                    color: task.strike ? "blue" : "red ",
-                    margin: "0.5rem",
-                  }}
-                >
-                  {task.taskName}
-                </h3>
-              </div>
-              <div className="todoList-Icons">
-                {task.taskName && (
-                  <BiSolidLike
+      <div className="todoBody">
+        {todo.map((task) => {
+          return (
+            todo.length !== 0 &&
+            task.taskName && (
+              <div key={task.id} className="todoList">
+                <div className="todoList-Task">
+                  <h3
+                    onClick={() => handleStrike(task)}
                     style={{
-                      width: "1.5rem",
-                      height: "1.2rem",
                       cursor: "pointer",
-                      color: task.like && "blue",
+                      textDecorationLine: task.strike && "line-through",
+                      color: task.strike ? "blue" : "red ",
+                      margin: "0.5rem",
                     }}
-                    onClick={() => handleLike(task)}
-                  />
-                )}
+                  >
+                    {task.taskName}
+                  </h3>
+                </div>
+                <div className="todoList-Icons">
+                  {task.taskName && (
+                    <BiSolidLike
+                      style={{
+                        width: "1.5rem",
+                        height: "1.2rem",
+                        cursor: "pointer",
+                        color: task.like && "blue",
+                      }}
+                      onClick={() => handleLike(task)}
+                    />
+                  )}
 
-                {task.taskName && (
-                  <MdDelete
-                    style={{
-                      width: "1.5rem",
-                      height: "1.2rem",
-                      cursor: "pointer",
-                    }}
-                    onClick={() => handleDelete(task)}
-                  />
-                )}
+                  {task.taskName && (
+                    <MdDelete
+                      style={{
+                        width: "1.5rem",
+                        height: "1.2rem",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => handleDelete(task)}
+                    />
+                  )}
 
-                {task.taskName && (
-                  <BiEdit
-                    style={{
-                      width: "1.5rem",
-                      height: "1.2rem",
-                      cursor: "pointer",
-                    }}
-                    onClick={() => handleEdit(task)}
-                  />
-                )}
+                  {task.taskName && (
+                    <BiEdit
+                      style={{
+                        width: "1.5rem",
+                        height: "1.2rem",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => handleEdit(task)}
+                    />
+                  )}
+                </div>
               </div>
-            </div>
-          )
-        );
-      })}
+            )
+          );
+        })}
+      </div>
     </div>
   );
 };

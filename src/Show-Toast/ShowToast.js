@@ -1,14 +1,11 @@
 import React from "react";
 import "./Toast.css";
-import { useState } from "react";
+import { useToastContext } from "./ToastContext";
 const ShowToast = () => {
-  const [disable, setDisable] = useState(false);
-  const hideToast = () => {
-    setDisable(true);
-  };
+  const { disable, hideToast } = useToastContext();
   return (
-    <section className={`default ${disable ? "hide" : " "}`}>
-      <h3 style={{ marginTop: "0" }}>ToastComponent</h3>
+    <section className={`default ${disable ? "hide" : "show "}`}>
+      <h3 style={{ marginTop: "0" }}>This is the Toast component..</h3>
       <button onClick={hideToast}>Hide</button>
     </section>
   );

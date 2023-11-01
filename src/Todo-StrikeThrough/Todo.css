@@ -4,6 +4,8 @@
 .todoInputActions {
   display: flex;
   justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 .todoInputActions > input {
   background: #618ffa;
@@ -13,18 +15,30 @@
   cursor: pointer;
   background: #d9dffc;
 }
+.todoBody {
+  max-height: 69vh;
+  overflow: scroll;
+}
 .todoList {
   width: 30vw;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid #d9dfb0;
+  text-align: left;
+  background-color: #d9dffc;
 }
 .todoList-Task {
-  display: flex;
+  width: 70%;
+  background-color: white;
 }
+
 .todoList-Icons {
+  height: 100%;
+  background-color: #d9dffc;
   display: flex;
+  padding: 0.2rem;
 }
 /* mobileScreen */
 @media screen and (max-width: 750px) {

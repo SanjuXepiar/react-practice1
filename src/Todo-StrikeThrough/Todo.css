@@ -16,32 +16,32 @@
   background: #d9dffc;
 }
 .todoBody {
-  max-height: 69vh;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9dffc;
+  border-radius: 0.3rem;
 }
 .todoList {
-  width: 30vw;
-  margin: auto;
+  width: 40vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  border: 1px solid #d9dfb0;
   text-align: left;
-  background-color: #d9dffc;
 }
 .todoList-Task {
   width: 70%;
-  background-color: white;
+  word-wrap: break-word;
 }
 
 .todoList-Icons {
   height: 100%;
-  background-color: #d9dffc;
   display: flex;
   padding: 0.2rem;
 }
 /* mobileScreen */
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 600px) {
   .todoList {
     width: 100%;
     display: flex;

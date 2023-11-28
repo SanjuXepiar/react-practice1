@@ -1,12 +1,7 @@
 .App {
   text-align: center;
 }
-.links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
+
 a {
   text-decoration: none;
 }
@@ -47,20 +42,39 @@ a {
   background: #ddf8f7;
   color: black;
   margin-left: 0.5rem;
+  text-indent: 5px;
 }
 
-.wrapperHeader {
+.wrapperContainer {
   display: flex;
-  justify-content: space-between;
-  text-align: center;
-  padding: 1rem 0 0 1rem;
+  flex-direction: column;
 }
+
+.appHeader {
+  display: flex;
+}
+.wrapperHeading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .wrapperButton {
   font-size: 1.2rem;
   font-weight: 600;
   color: blue;
-  box-shadow: 2px 3px 4px grey;
-  border: 1px solid powderblue;
   border-radius: 0.3rem;
   padding: 0.25rem 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .wrapperHeading {
+    font-size: 1.5rem;
+  }
+  .wrapperButton {
+    font-size: 1rem;
+  }
 }

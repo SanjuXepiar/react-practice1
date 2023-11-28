@@ -18,22 +18,22 @@ function Home() {
         </div>
         <div className="project">
           <Link to="/password">
-            <h4>Password-Match</h4>
+            <h4>Password Match</h4>
           </Link>
         </div>
         <div className="project">
           <Link to="/alphanumeric">
-            <h4>Alphanumeric-Password</h4>
+            <h4>Alphanumeric Password</h4>
           </Link>
         </div>
         <div className="project">
           <Link to="/disable">
-            <h4>Disable-Submit</h4>
+            <h4>Disable Submit</h4>
           </Link>
         </div>
         <div className="project">
           <Link to="/showhide">
-            <h4>Show/Hide Password Button</h4>
+            <h4>Show/Hide Password</h4>
           </Link>
         </div>
         <div className="project">
@@ -53,7 +53,7 @@ function Home() {
         </div>
         <div className="project">
           <Link to="/strikeThrough">
-            <h4>Todo- StrikeThrough</h4>
+            <h4>Todo Strike Through</h4>
           </Link>
         </div>
       </section>

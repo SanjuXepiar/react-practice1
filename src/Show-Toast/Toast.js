@@ -12,7 +12,7 @@ const Toast = () => {
         {" "}
         ShowToast
       </button>
-      <div className="toast">{show && <ShowToast />}</div>
+      <div>{show && <ShowToast />}</div>
     </div>
   );
 };

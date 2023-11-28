@@ -20,15 +20,15 @@ function App() {
       <Route
         path="/counter"
         element={
-          <Wrapper>
-            <Counter />{" "}
+          <Wrapper heading="Counter">
+            <Counter />
           </Wrapper>
         }
       />
       <Route
         path="/twitter"
         element={
-          <Wrapper>
+          <Wrapper heading="Twitter">
             <Twitter />
           </Wrapper>
         }
@@ -36,7 +36,7 @@ function App() {
       <Route
         path="/password"
         element={
-          <Wrapper>
+          <Wrapper heading="Password-Match">
             <Password />
           </Wrapper>
         }
@@ -44,7 +44,7 @@ function App() {
       <Route
         path="/alphanumeric"
         element={
-          <Wrapper>
+          <Wrapper heading="Alphanumeric-Password">
             <Alphanumeric />
           </Wrapper>
         }
@@ -52,7 +52,7 @@ function App() {
       <Route
         path="/disable"
         element={
-          <Wrapper>
+          <Wrapper heading="Password-Disabled">
             <Disable />
           </Wrapper>
         }
@@ -60,7 +60,7 @@ function App() {
       <Route
         path="/showhide"
         element={
-          <Wrapper>
+          <Wrapper heading="Password-Show & Hide">
             <ShowHide />
           </Wrapper>
         }
@@ -68,7 +68,7 @@ function App() {
       <Route
         path="/addcart"
         element={
-          <Wrapper title="Add to Cart">
+          <Wrapper heading="Add to Cart">
             <AddCart />
           </Wrapper>
         }
@@ -77,7 +77,7 @@ function App() {
       <Route
         path="/switchTab"
         element={
-          <Wrapper>
+          <Wrapper heading="Switch-Tab">
             <SwitchTab />
           </Wrapper>
         }
@@ -85,7 +85,7 @@ function App() {
       <Route
         path="/toast"
         element={
-          <Wrapper>
+          <Wrapper heading="Toast">
             <Toast />
           </Wrapper>
         }
@@ -93,7 +93,7 @@ function App() {
       <Route
         path="/strikeThrough"
         element={
-          <Wrapper>
+          <Wrapper heading="Todo-List">
             <Todo />
           </Wrapper>
         }

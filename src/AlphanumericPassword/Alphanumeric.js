@@ -23,28 +23,31 @@ const Alphanumeric = () => {
 
   return (
     <section className="alphanumeric">
+      {alert && <h4 style={{ height: "2rem", color: "red" }}>{alert}</h4>}
       <div className="alphanumericContents">
         <h1 style={{ marginTop: "0" }}>Alphanumeric Password</h1>
         <form onSubmit={handleSubmit}>
           <div className="alphanumericPassword">
-            <label htmlFor="password" style={{ fontWeight: "600" }}>
-              Enter Password :{" "}
-            </label>
-            <input
-              className="alphanumericInput"
-              type="text"
-              placeholder="password"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-            />
-            <br />
+            <div className="inputsLabel">
+              <label htmlFor="password" style={{ fontWeight: "600" }}>
+                Enter Password :{" "}
+              </label>
+            </div>
+            <div className="inputsInput">
+              <input
+                className="alphanumericInput"
+                type="text"
+                placeholder="password"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+              />
+            </div>
           </div>
           <button type="submit" disabled={input.length === 0} className="btn">
             Check
           </button>
         </form>
       </div>
-      <h4 style={{ height: "2rem", color: "red" }}>{alert}</h4>
     </section>
   );
 };

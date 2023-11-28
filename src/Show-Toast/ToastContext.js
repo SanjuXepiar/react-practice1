@@ -9,7 +9,9 @@ export const ToastContextProvider = ({ children }) => {
   };
   const hideToast = () => {
     setDisable(true);
-    setShow(false);
+    setTimeout(() => {
+      setShow(false);
+    }, 450);
   };
   return (
     <>

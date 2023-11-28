@@ -9,7 +9,7 @@ const Disable = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setAlert("Password Matched refer console");
+    setAlert("Password Matched");
     console.log(input1);
     setTimeout(() => {
       setAlert("");
@@ -26,7 +26,7 @@ const Disable = () => {
       </p>
       <div className="disablePasswordButton">
         <h1 className="disable-title">Password Disable</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
           <div className="inputs">
             <div className="inputsLabel">
               <label htmlFor="password">Old Password :</label>
@@ -35,6 +35,7 @@ const Disable = () => {
             <div className="inputsInput">
               <input
                 type="password"
+                autoFocus
                 value={input1}
                 className="input"
                 onChange={(e) => setInput1(e.target.value)}
@@ -47,18 +48,17 @@ const Disable = () => {
               />
             </div>
           </div>
+          <button
+            className=" btn"
+            style={{ marginTop: "1rem" }}
+            type="submit"
+            disabled={input1 !== input2}
+            // onClick={handleSubmit}
+          >
+            Submit
+          </button>
         </form>
       </div>
-
-      <button
-        className=" btn"
-        style={{ marginTop: "1rem" }}
-        type="submit"
-        disabled={input1 !== input2}
-        onClick={handleSubmit}
-      >
-        Submit
-      </button>
     </section>
   );
 };

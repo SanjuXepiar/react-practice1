@@ -23,6 +23,17 @@ const Password = () => {
 
   return (
     <section className="passwordMatch">
+      {input1 && (
+        <p
+          style={{
+            height: "1rem",
+            color: "red",
+            fontWeight: "500",
+          }}
+        >
+          {alert}
+        </p>
+      )}
       <form onSubmit={checkPassword}>
         <div className="passwordMatchContents">
           <h1 style={{ marginTop: "0" }}>Password Match</h1>
@@ -33,6 +44,7 @@ const Password = () => {
             </div>
             <div className="inputsInput">
               <input
+                autoFocus
                 type="password"
                 value={input1}
                 placeholder="password"
@@ -53,16 +65,6 @@ const Password = () => {
             Check
           </button>
         </div>
-        <p
-          style={{
-            height: "1rem",
-            color: "red",
-            fontWeight: "500",
-            marginTop: "0",
-          }}
-        >
-          {input1 && alert}
-        </p>
       </form>
     </section>
   );

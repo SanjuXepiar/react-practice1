@@ -13,23 +13,20 @@ const ShowHide = () => {
     <div className="showHide">
       <div className="showHideContent">
         <h1 style={{ marginTop: "0" }}>Show/Hide- Password</h1>
-        <form className="showHideForm " onSubmit={handleShowHide}>
-          <label
-            htmlFor="password"
-            style={{
-              fontWeight: "500",
-            }}
-          >
-            Password :{" "}
-          </label>
-          <input
-            type={show ? "text" : "password"}
-            onChange={(e) => e.target.value}
-          />
-          <button type="submit" className="eyeButton">
+        <div className="inputs">
+          <div className="inputsLabel">
+            <label htmlFor="password">Password : </label>
+          </div>
+          <div className="inputsInput">
+            <input
+              type={show ? "text" : "password"}
+              onChange={(e) => e.target.value}
+            />
+          </div>
+          <button className="eyeButton" onClick={handleShowHide}>
             {show ? <BiSolidHide /> : <BiSolidShow />}
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );

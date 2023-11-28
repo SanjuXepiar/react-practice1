@@ -20,11 +20,18 @@ const Twitter = () => {
   return (
     <div className="twitter">
       <h1 style={{ textDecorationLine: "underline" }}>Description box</h1>
-      <p className="alertText"> {alert}</p>
-      <div className="twitterTextArea">
-        <textarea rows={8} cols={40} maxLength={200} onChange={handleChange} />
+      {alert && <p className="alertText">{alert}</p>}
+      <div className="twitterBody">
+        <div className="twitterTextArea">
+          <textarea
+            rows={8}
+            cols={40}
+            maxLength={200}
+            onChange={handleChange}
+          />
+        </div>
+        {count.length}/200
       </div>
-      {count.length}/200
     </div>
   );
 };
